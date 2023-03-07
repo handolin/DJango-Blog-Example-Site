@@ -1,0 +1,67 @@
+{% extends 'layout.html' %}
+
+
+{% block content %}
+
+    <header class="main-header">
+    <div class="jumbotron bg-dark text-white">
+        <div class="container">
+            <div class="col-md-6 px-0">
+                <h1 class="display-4 font-italic"> Title of a longer featured blog post</h1>
+                <p class="lead my-3">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium reiciendis doloribus
+                    commodi, repudiandae ipsa omnis totam iusto harum debitis. Sapiente.
+                </p>
+                <!-- <p class="lead mb-0">
+                    <a href="#" class="text-white font-weight-bold">Continue Reading...</a>
+
+                </p> -->
+            </div>
+        </div>
+    </div>
+    </header>
+
+
+    <div class="container main-noheader">
+        <div class="row">
+            <div class="col-md-8">
+    
+                {% if articles %}
+                {% for article in articles %}
+    
+                <div class="card mb-4">
+                    <img src="{{article.image}}" class="card-img-top img-thumbnail" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="{% url 'details' article.id %}"> {{article.name}} </a>
+                        </h4>
+                        <p class="card-text">{{article.article_details}}</p>
+                        <a class="btn btn-primary" href="{% url 'details' article.id %}">Read
+                            More</a>
+                    </div>
+                    <div class="card-footer text-muted">{{article.created_date | timesince}}</div>
+                </div>
+                {% endfor %}
+    
+                {% else %}
+                <div class="alert alert-warning">
+                    <p>
+                        Makale Bulunmuyor
+                    </p>
+                </div>
+                {% endif %}
+            </div>
+
+            {% include 'pages/right-column.html' %}
+            
+        </div>
+        
+    
+    </div>
+    
+
+
+
+{% endblock %}
+
+

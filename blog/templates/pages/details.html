@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+
+
+    <div class="row main-noheader">
+        <div class="col-md-5">
+            <img src="{{article.image}}" class="card-img-top img-thumbnail" alt="">
+
+
+        </div>
+        <div class="col-md-7">
+            <h1>{{ article.name }}</h1>
+            <hr>
+            <p><i>{{article.description}}</i> </p>
+            <p>
+                {{article.article_details}}
+            </p>
+
+        </div>
+    </div>
+
+{% endblock %}

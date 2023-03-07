@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+
+
+    <div class="container main-noheader">
+        <div class="row">
+            <div class="col-md-8">
+
+                {% if articles %}
+                {% for article in articles %}
+
+                <div class="card mb-4">
+                    <img src="{{article.image}}" class="card-img-top img-thumbnail" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="{% url 'details' article.id %}"> {{article.name}} </a>
+                        </h4>
+                       
+                    </div>                    
+                </div>
+                {% endfor %}
+
+                {% else %}
+                <div class="alert alert-warning">
+                    <p>
+                        No Articles
+                    </p>
+                </div>
+                {% endif %}
+            </div>
+            {% include 'pages/right-column.html' %}
+        </div>
+        
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,36 @@
+.navbar {
+    /* opacity: 0.6; */
+    border-bottom: 1px solid #fff!important;
+
+}
+
+.jumbotron {
+    padding-top: 100px;
+
+}
+
+.main-noheader {
+    margin-top: 75px;
+}
+
+.main-header {
+    margin-top: 56px;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 160px;
+}
+
+body {
+    margin-bottom: 160px;
+}
+
+.fixed-bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+
